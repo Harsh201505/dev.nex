@@ -1,31 +1,41 @@
-# Harsh — Gen-Z Web Development Website
-Modern dark-mode freelance web-development landing page with animated UI and portfolio filtering.
+# Dev.Nex — 5 Page Website + Backend
 
-### Highlights
-- Gen-Z visual direction: neon lime, gradients, glow, glassy nav, grain
-- Animated hero card and marquee
-- Scroll reveal animations
-- Animated stats counters
-- Cursor spotlight + magnetic CTAs on desktop
-- Interactive portfolio filters: All / Business / Restaurant / Gym / Barber
-- Fully responsive mobile navigation
-- WhatsApp and direct-call CTAs
-- No watermark / no build step
+## Pages
+- `/` Home
+- `/services.html` Services
+- `/work.html` Portfolio
+- `/pricing.html` Pricing
+- `/contact.html` Contact
 
-### Contact
-Harsh — +91 89302 81471
+## Backend
+Node.js + Express + SQLite.
+- `POST /api/enquiries` saves contact enquiries.
+- `GET /api/health` checks API status.
+- `GET /api/enquiries` requires `x-admin-key`.
+- `/admin?key=YOUR_ADMIN_KEY` displays enquiries.
 
-### Run
-Open `index.html` directly in a browser.
+## Run locally
+1. Install Node.js 18+.
+2. Copy `.env.example` to `.env`.
+3. Set a strong `ADMIN_KEY`.
+4. Run `npm install`.
+5. Run `npm start`.
+6. Open http://localhost:3000
 
-### Deploy
-Upload the project to Netlify, Vercel, GitHub Pages or another static host. No build command is required.
+The SQLite database is created automatically at `data/devnex.db`.
 
-## Live demo work
+## Deploy
+Deploy to a Node-compatible host such as Render, Railway, Fly.io, VPS, etc.
+Set environment variables:
+- `PORT` (usually supplied by the host)
+- `ADMIN_KEY`
+
+For production, use persistent disk/storage for SQLite or replace SQLite with PostgreSQL/MySQL if the host filesystem is ephemeral.
+
+## Existing demos
 - Gym: https://gymdemo20154.netlify.app
 - Salon: https://salondemosite01.netlify.app/
 - Restaurant: https://pt659741.netlify.app/
 
 ## Brand
-- Brand name: Dev.Nex
-- Logo: DN lettermark
+Dev.Nex — DN lettermark.
